@@ -1,0 +1,24 @@
+{
+  "defaultAssembly": "Lesson_06",
+  "components": [
+    {
+      "type": "Lesson_06.Services.Impl.OrderService",
+      "services": [
+        {
+          "type": "Lesson_06.Services.IOrderService"
+        }
+      ],
+      "injectProperties": true
+    },
+    {
+      "type": "Lesson_06.Services.Impl.ProductService",
+      "services": [
+        {
+          "type": "Lesson_06.Services.IProductService"
+        }
+      ],
+      "injectProperties": true
+    }
+
+  ]
+}

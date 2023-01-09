@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<autofac defaultAssembly="Lesson6">
+	<components name="0">
+		<type>Lesson_06.Services.Impl.OrderService</type>
+		<services name="0" type="Lesson_06.Services.IOrderService" />
+		<injectProperties>true</injectProperties>
+	</components>
+</autofac>
