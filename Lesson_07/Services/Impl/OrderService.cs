@@ -2,16 +2,16 @@
 using Microsoft.Extensions.Logging;
 using Orders.DAL;
 using Orders.DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Lesson_06.Services.Impl
+namespace Lesson_07.Services.Impl
 {
     public class OrderService : IOrderService
     {
+
+        //public ILogger<OrderService> Logger { get; set; }
+
+        //public OrdersDbContext Context { get; set; }
+
         #region Services
 
         private readonly ILogger<OrderService> _logger;
@@ -30,6 +30,8 @@ namespace Lesson_06.Services.Impl
 
         #endregion
 
+        #region Public Methods
+
         public async Task<Order> CreateAsync(int buyerId, string address, string phone, IEnumerable<(int productId, int quantity)> products)
         {
             var buyer = await _context.Buyers.FirstOrDefaultAsync(buyer => buyer.Id == buyerId);
@@ -41,7 +43,7 @@ namespace Lesson_06.Services.Impl
             {
                 var productEntyty = await _context.Products.FirstOrDefaultAsync(product => product.Id == p.productId);
                 if (productEntyty == null)
-                    throw new Exception("Product not found.");
+                    throw new Exception("Product not found");
                 if (productCollection.ContainsKey(productEntyty))
                     productCollection[productEntyty] += p.quantity;
                 else
@@ -58,7 +60,7 @@ namespace Lesson_06.Services.Impl
                 {
                     ProdItem = p.Key,
                     Quantity = p.Value
-                }).ToList()
+                }).ToArray()
             };
 
             await _context.Orders.AddAsync(order);
@@ -67,5 +69,8 @@ namespace Lesson_06.Services.Impl
 
             return order;
         }
+
+        #endregion
+
     }
 }

@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using Lesson_06.Autofac;
 using System.Reflection;
 using Autofac.Configuration;
+using Orders.DAL.Entities;
 
 namespace Lesson_06
 {
@@ -88,8 +89,8 @@ namespace Lesson_06
         {
             var host = Hosting;
             await host.StartAsync();
-            //await PrintBuyersAsync();
-            await AddProduct();
+            await PrintBuyersAsync();
+            //await AddProduct();
             Console.ReadKey(true);
             await host.StopAsync();
         }
@@ -112,7 +113,8 @@ namespace Lesson_06
             var orderService = services.GetRequiredService<IOrderService>();
 
             await orderService.CreateAsync(random.Next(1, 6), "123, Russia, Address", "+79001112233", new (int, int)[] {
-                    new ValueTuple<int, int>(1, 1)
+                    new ValueTuple<int, int>(1, 1),
+                    new ValueTuple<int, int>(3, 2)
                 });
         }
 
