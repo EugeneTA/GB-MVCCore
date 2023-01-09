@@ -22,7 +22,7 @@ namespace Orders.DAL.Entities
         [Required]
         public Buyer Buyer { get; set; } = null!;
 
-        public ICollection<OrderItem> Items { get; set; } = new HashSet<OrderItem>();
+        public virtual ICollection<OrderItem> Items { get; set; } = new HashSet<OrderItem>();
 
     }
 }

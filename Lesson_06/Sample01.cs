@@ -9,7 +9,7 @@ namespace Lesson_06
         static void Main(string[] args)
         {
             var dbContextOptionsBuilder = new DbContextOptionsBuilder<OrdersDbContext>()
-                .UseSqlServer("data source=NB-TISHKOV;initial catalog=OrdersDatabase;User Id=OrdersDatabaseUser;Password=12345;MultipleActiveResultSets=True;App=EntityFramework");
+                .UseSqlServer("data source=NB-TISHKOV;initial catalog=OrdersDatabase;User Id=OrdersDatabaseUser;Password=12345;MultipleActiveResultSets=True;TrustServerCertificate=True;App=EntityFramework");
 
 
             using (var context = new OrdersDbContext(dbContextOptionsBuilder.Options))
