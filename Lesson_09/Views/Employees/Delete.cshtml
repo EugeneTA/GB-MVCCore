@@ -1,0 +1,54 @@
+﻿@model EmployeesViewModel
+@{
+    ViewData["Title"] = "Удаление сотрудника";
+}
+
+<h1>Удаление сотрудника</h1>
+<h3>Вы действительно желаете удалить информацию по сотруднику?</h3>
+<hr />
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Patronymic)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Patronymic)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Birthday)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Birthday)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <form asp-action="DeleteConfirm" asp-route-id="@Model.Id">
+        <input type="submit" value="Delete" class="btn btn-danger mt-3" />
+    </form>
+</div>
+
+<hr />
+
+<div class="mt-3 mb-3">
+    <a asp-action="Index">Back to List</a>
+</div>

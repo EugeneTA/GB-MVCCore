@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Employee>
+@{
+    ViewBag.Title = "Список сотрудников";
+}
+
+@if (Model.Any())
+{
+    <div>
+
+    </div>
+
+    <div>
+        <h2>База содержит @Model.Count() сотрудника(ов).</h2>
+
+    </div>
+
+}
+else
+{
+    <p>В базе пока нет сотрудников</p>
+}
