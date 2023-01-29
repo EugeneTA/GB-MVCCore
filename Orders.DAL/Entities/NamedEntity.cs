@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Orders.DAL.Entities
 {
-    public abstract class NamedEntity
+    public abstract class NamedEntity : Entity
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        //[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //public int Id { get; set; }
 
         [Required]
         public string Name { get; set; } = null!;

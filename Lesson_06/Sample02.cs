@@ -19,7 +19,7 @@ namespace Lesson_06
 
             serviceBuilder.AddDbContext<OrdersDbContext>(options =>
             {
-                options.UseSqlServer("data source=DESKTOP-6DH4OOP\\SQLEXPRESS;initial catalog=OrdersDatabase;User Id=OrdersUser;Password=12345;MultipleActiveResultSets=True;App=EntityFramework");
+                options.UseSqlServer("data source=DESKTOP-6DH4OOP\\SQLEXPRESS;initial catalog=OrdersDatabase;User Id=OrdersUser;Password=12345;MultipleActiveResultSets=True;TrustServerCertificate=True;App=EntityFramework");
             });
 
             #endregion
